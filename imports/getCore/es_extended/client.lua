@@ -28,20 +28,27 @@ return function(resource)
 		if type == 'string' then
 			if data.job.name == filter then
 				return data.job.name, data.job.grade
+			elseif data.faction.name == filter then
+				return data.faction.name, data.faction.grade
 			end
 		else
 			local tabletype = table.type(filter)
 
 			if tabletype == 'hash' then
 				local grade = filter[data.job.name]
+				local grade2 = filter[data.faction.name]
 
 				if grade and grade <= data.job.grade then
 					return data.job.name, data.job.grade
+				elseif grade2 and grade2 <= data.faction.grade then
+					return data.faction.name, data.faction.grade
 				end
 			elseif tabletype == 'array' then
 				for i = 1, #filter do
 					if data.job.name == filter[i] then
 						return data.job.name, data.job.grade
+					elseif data.faction.name == filter[i]
+						return data.faction.name, data.faction.grade
 					end
 				end
 			end
