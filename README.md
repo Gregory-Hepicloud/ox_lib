@@ -3,6 +3,8 @@
 
 ## Lua Library for FiveM
 
+/!\ ITS A CUSTOM OF OX LIB FOR ADD FACTION CHECK ON CORE ESX
+
 FXServer provides its own system for including files, which we use to load this resource in the fxmanifest via
 
 ```lua
